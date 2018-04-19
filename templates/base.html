@@ -40,7 +40,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="{% url 'index' %}">ONG</a>
+			<a class="navbar-brand" href="{% url 'core:dashboard' %}">ONG</a>
 		</div>
 		<!-- /.navbar-header -->
 
@@ -55,7 +55,7 @@
 					<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 					</li>
 					<li class="divider"></li>
-					<li><a href="pages/login.html"><i class="fa fa-sign-out fa-fw"></i>
+					<li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i>
 						Logout</a>
 					</li>
 				</ul>
@@ -69,10 +69,10 @@
 			<div class="sidebar-nav navbar-collapse">
 				<ul class="nav" id="side-menu">
 					<div class="panel-heading">
-						<h4 class="text-center"><strong>Olá Lucas Felix !</strong></h4>
+						<h4 class="text-center"><strong> {{ request.user.get_full_name }}</strong></h4>
 					</div>
 					<li>
-						<a href="{% url 'index' %}"><i class="fa fa-dashboard fa-fw"></i>
+						<a href="{% url 'core:dashboard' %}"><i class="fa fa-dashboard fa-fw"></i>
 							Dashboard</a>
 					</li>
 					<li>

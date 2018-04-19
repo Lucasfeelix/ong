@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+{% block title %}
+  Cadastrar usuário
+{% endblock %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+	<div class="col-md-5 mx-auto">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3>Cadastrar usuário</h3>
+			</div>
+			<div class="card-body">
+				<form class="form-horizontal" method="post"> {% csrf_token %}
+					{% for error in form.non_field_errors %}
+						<div class="alert alert-danger">
+							{{ error }}
+						</div>
+					{% endfor %}
+					{% for field in form %}
+            <div class="form-group{% if form.password2.errors %} has-error{% endif %}">
+              <label for="{{ form.password2.auto_id }}" class="col-md-12 control-label">{{ form.password2.label }}</label>
+{#              {% render_field form.password2 class="form-control" %}#}
+              {% if custom_class %}
+                {% with "form-control "|add:custom_class as classnames %}
+                  {% render_field field class="classnames" %}
+                {% endwith %}
+                {% else %}
+                  {% render_field field class="form-control" %}
+              {% endif %}
+              {% for error in form.password2.errors %}
+                <p class="text-danger">{{ error|safe }}</p>
+              {% endfor %}
+            </div>
+					{% endfor %}
+          <button type="submit" class="btn btn-lg btn-outline-primary float-right float-sm-right float-md-right float-lg-right">Salvar</button>
+        </form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block js %}
+	{% include 'include/load_jquey.html' %}
+	{% include 'include/load_mask.html' %}
+{% endblock %}
