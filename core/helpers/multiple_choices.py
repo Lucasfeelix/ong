@@ -50,17 +50,17 @@ UF = (
 )
 
 CIVIL_STATUS = (
-    (u'Casado(a)', u'Casado(a)'),
-    (u'Divorciado(a)', u'Divorciado(a)'),
-    (u'Separado(a)', u'Separado(a)'),
-    (u'Solteiro(a)', u'Solteiro(a)'),
-    (u'União Estável', u'União Estável'),
-    (u'Viúvo(a)', u'Viúvo(a)')
+    (1, u'Casado(a)'),
+    (2, u'Divorciado(a)'),
+    (3, u'Separado(a)'),
+    (4, u'Solteiro(a)'),
+    (5, u'União Estável'),
+    (6, u'Viúvo(a)')
 )
 
 GENDER = (
-    (u'Feminino', u'Feminino'),
-    (u'Masculino', u'Masculino')
+    (0, u'Feminino'),
+    (1, u'Masculino')
 )
 
 
@@ -87,8 +87,8 @@ TIME = (
 )
 
 EMPLOYEES_TYPE = (
-    (u'Colaborador', u'Colaborador(a)'),
-    (u'Professor', u'Professor(a)')
+    (1, u'Colaborador(a)'),
+    (2, u'Professor(a)')
 )
 
 BOOLEAN_TYPE = (
@@ -118,3 +118,5 @@ STATUS_MP = (
     (u'2', u'Vencida'),
     (u'3', u'Cancelada'),
 )
+
+NI = 'Não informado'
