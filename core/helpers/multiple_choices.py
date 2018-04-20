@@ -1,4 +1,3 @@
-
 EXPENSES_TYPE = (
     (u'Aluguel', u'Aluguel'),
     (u'Compra', u'Compra'),
@@ -80,10 +79,10 @@ SCHOLARITY = (
 )
 
 TIME = (
-    (u'Matutino', u'Matutino'),
-    (u'Diurno', u'Diurno'),
-    (u'Vespertino', u'Vespertino'),
-    (u'Noturno', u'Noturno')
+    (1, u'Matutino'),
+    (2, u'Diurno'),
+    (3, u'Vespertino'),
+    (4, u'Noturno')
 )
 
 EMPLOYEES_TYPE = (
