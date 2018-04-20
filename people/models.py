@@ -9,7 +9,7 @@ class Person(models.Model):
     last_name = models.CharField(max_length=50)
     date_of_birth = models.DateField(null=True, blank=True)
     gender = models.BooleanField(choices=GENDER, max_length=14)
-    civil_status = models.IntegerField(choices=CIVIL_STATUS, max_length=13)
+    civil_status = models.IntegerField(choices=CIVIL_STATUS)
     mothers_name = models.CharField(max_length=60)
     fathers_name = models.CharField(max_length=60, blank=True, default=NI)
     occupation = models.CharField(max_length=40)
@@ -21,7 +21,7 @@ class Person(models.Model):
     cell_phone = models.CharField(max_length=10, null=True, blank=True,
                                   default=NI)
     address = models.CharField(max_length=100)
-    number = models.IntegerField(max_length=4)
+    house_number = models.IntegerField()
     complement = models.CharField(max_length=80, null=True, blank=True)
     neighborhood = models.CharField(max_length=40)
     city = models.CharField(max_length=40)

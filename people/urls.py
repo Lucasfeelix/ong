@@ -1,12 +1,12 @@
 from django.urls import path
-from .views import alunos
+from . import views as v
 
 
 app_name = 'people'
 urlpatterns = [
-    path('alunos', alunos, name='alunos'),
-    # path('alunos/cadastrar/', ),
-    # path('aluno/editar/', ),
+    path('alunos/', v.students_list, name='students_list'),
+    path('cadastrar/alunos/', v.students_create, name='students_create'),
+    path('editar/aluno/<int:id>/', v.students_update, name='students_update'),
     #
     # path('doadores',),
     # path('doadores/cadastrar/', ),
