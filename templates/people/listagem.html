@@ -1,47 +1,24 @@
-﻿{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %}
 
-{% block title %} Alunos {% endblock %}
-
-{% block css_files %}
-	{% include 'auxiliar/commom_css.html' %}
-	<link href="{% static 'plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css' %}" rel="stylesheet">
-{% endblock %}
+{% block title %}  {% endblock %}
 
 {% block content %}
-	<div class="row clearfix">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			<div class="card">
-				<div class="header">
-					<a href="{{ add_url }}"
-						 class="btn bg-green waves-effect pull-right m-t--5"><i
-						class="material-icons">add_circle_outline</i><span> Adicionar</span></a>
-					<h2> {{ complete_title }} </h2>
-				</div>
-				<div class="body">
-					<div class="input-group">
-						<span class="input-group-addon">
-							<i class="material-icons">&#xE8B6;</i>
-						</span>
-						<div class="form-line">
-							<input type="text" id="search-bar" class="form-control line-input"
-										 placeholder="Buscar">
-						</div>
-					</div>
-					{% if type == 'students' %}
-						{% include 'people/students/students_list.html' %}
-					{% elif type == 'donors' %}
-						{% include 'people/donors/donors_list.html' %}
-					{% elif type == 'employees' %}
-						{% include 'people/employees/employees_list.html' %}
-					{% endif %}
-				</div>
-				<!-- #END# Basic Examples -->
-			</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">{{ complete_title }}</h1>
 		</div>
 	</div>
-	<!-- #END# Body Copy -->
-{% endblock %}
-{% block script_files %}
-	{% include 'auxiliar/table_scripts.html' %}
+
+	<div class="row">
+		<div class="col-lg-12">
+      {% if type == 'students'%}
+        {% include 'people/students/students_list.html' %}
+      {% else %}
+        <h1> Error !</h1>
+      {% endif %}
+			<br>
+
+			<br>
+		</div>
+	</div>
 {% endblock %}

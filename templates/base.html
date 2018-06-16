@@ -1,250 +1,195 @@
 ﻿<!DOCTYPE html>
-<html>
 {% load static %}
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta
-		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-		name="viewport">
-	<title>ONG |{% block title %} {% endblock %} </title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-	{% block css_files %}
-	{% endblock %}
+	<title>ONG | {% block title %}{% endblock %}</title>
 
+	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	<link href="{% static 'metisMenu/metisMenu.min.css' %}" rel="stylesheet">
+	<!-- MetisMenu CSS -->
+	<link href="{% static 'dist/css/sb-admin-2.css' %}" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="{% static 'font-awesome/css/font-awesome.min.css' %}"
+				rel="stylesheet" type="text/css"> <!-- Custom Fonts -->
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Init dataTable CSS -->
+	<!-- DataTables CSS -->
+	<link href="{% static 'datatables-plugins/dataTables.bootstrap.css' %}"
+				rel="stylesheet">
+
+	<!-- DataTables Responsive CSS -->
+	<link href="{% static 'datatables-responsive/dataTables.responsive.css' %}"
+				rel="stylesheet">
+	<!-- End dataTable CSS -->
 </head>
 
-<body class="theme-blue">
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-	<div class="loader">
-		<div class="preloader">
-			<div class="spinner-layer pl-red">
-				<div class="
-				circle-clipper left">
-					<div class="circle"></div>
-				</div>
-				<div class="circle-clipper right">
-					<div class="circle"></div>
-				</div>
-			</div>
-		</div>
-		<p>Please wait...</p>
-	</div>
-</div>
-<!-- #END# Page Loader -->
-<!-- Overlay For Sidebars -->
-<div class="overlay"></div>
-<!-- #END# Overlay For Sidebars -->
-<!-- Top Bar -->
-<nav class="navbar">
-	<div class="container-fluid">
+<body>
+<div id="wrapper">
+	<!-- Navigation -->
+	<nav class="navbar navbar-default navbar-static-top" role="navigation"
+			 style="margin-bottom: 0">
 		<div class="navbar-header">
-			<a href="javascript:void(0);" class="navbar-toggle collapsed"
-				 data-toggle="collapse"
-				 data-target="#navbar-collapse" aria-expanded="false"></a>
-			<a href="javascript:void(0);" class="bars"></a>
-			<a class="navbar-brand" href="{% url 'core:dashboard' %}">ONG - Maluma</a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{% url 'core:dashboard' %}">ONG</a>
 		</div>
-		<div class="collapse navbar-collapse" id="navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li class="pull-right"><a href="javascript:void(0);"
-																	class="js-right-sidebar" data-close="true"><i
-					class="material-icons">more_vert</i></a></li>
-			</ul>
-		</div>
-	</div>
-</nav>
-<!-- #Top Bar -->
-<section>
-	<!-- Left Sidebar -->
-	<aside id="leftsidebar" class="sidebar">
-		<!-- User Info -->
-		<div class="user-info">
-			<div class="image">
-				<img src="{% static 'images/user.png' %}" width="48" height="48"
-						 alt="User"/>
-			</div>
-			<div class="info-container">
-				<div class="name" data-toggle="dropdown" aria-haspopup="true"
-						 aria-expanded="false">{{ user.get_full_name }}</div>
-				<div class="email">{{ user.email }}</div>
-				<div class="btn-group user-helper-dropdown">
-					<i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
-						 aria-expanded="true">keyboard_arrow_down</i>
-					<ul class="dropdown-menu pull-right">
-						<li><a href="javascript:void(0);"><i
-							class="material-icons">person</i>Perfil</a></li>
-						<li role="seperator" class="divider"></li>
-						<li><a href="javascript:void(0);"><i
-							class="material-icons">group</i>...</a></li>
-						<li role="seperator" class="divider"></li>
-						<li><a href="{% url 'logout' %}"><i class="material-icons">input</i>Sign
-							Out</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- #User Info -->
-		<!-- Menu -->
-		<div class="menu">
-			<ul class="list">
-				<li class="header">Menu</li>
-				<li class="active">
-					<a href="{% url 'core:dashboard' %}">
-						<i class="material-icons">dashboard</i>
-						<span>Dashboard</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="menu-toggle">
-						<i class="material-icons">create</i>
-						<span>Cadastrar</span>
-					</a>
-					<ul class="ml-menu">
-						<li>
-							<a href="{% url 'people:students_create' %}">
-								<span>Aluno</span>
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'people:donors_create' %}">
-								<span>Doador</span>
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'people:employees_create' %}">
-								<span>Funcionário</span>
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'accounts:register' %}">
-								<span>Usuário</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);" class="menu-toggle">
-								<span>Outros</span>
-							</a>
-							<ul class="ml-menu">
-								<li>
-									<a href="javascript:void(0);">
-										<span>Cursos</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);">
-										<span>Matrículas</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);">
-										<span>Mensalidades</span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);">
-										<span>Turmas</span>
-									</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="menu-toggle">
-						<i class="material-icons">people</i>
-						<span>Pessoas</span>
-					</a>
-					<ul class="ml-menu">
-						<li>
-							<a href="{% url 'people:students_list' %}">
-								<span>Alunos</span>
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'people:donors_list' %}">
-								<span>Doadores</span>
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'people:employees_list' %}">
-								<span>Funcionários</span>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<span>Usuários</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="base.html">
-						<i class="material-icons">favorite_border</i>
-						<span>Doações</span>
-					</a>
-				</li>
-				<li>
-					<a href="base.html">
-						<i class="material-icons">attach_money</i>
-						<span>Despesas</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:void(0);" class="menu-toggle">
-						<i class="material-icons">people</i>
-						<span>Movimentações</span>
-					</a>
-					<ul class="ml-menu">
-						<li>
-							<a href="{% url 'adm:courses_list' %}">
-								<span>Cursos</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<span>Matrículas</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<span>Mensalidades</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0);">
-								<span>Turmas</span>
-							</a>
-						</li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-		<!-- #Menu -->
-		<!-- Footer -->
-		<div class="legal">
-			<div class="copyright">
-				&copy; 2018 <a href="{% url 'core:dashboard' %}">ONG - Maluma</a>.
-			</div>
-			<div class="version">
-				<b>Version: </b> 1.0
-			</div>
-		</div>
-		<!-- #Footer -->
-	</aside>
-	<!-- #END# Left Sidebar -->
-</section>
+		<!-- /.navbar-header -->
 
-<section class="content">
-	<div class="container-fluid">
-		{% block content %}
-		{% endblock %}
-	</div>
-</section>
+		<ul class="nav navbar-top-links navbar-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-user">
+					<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+					</li>
+					<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+					</li>
+					<li class="divider"></li>
+					<li><a href="{% url 'logout' %}"><i class="fa fa-sign-out fa-fw"></i>
+						Logout</a>
+					</li>
+				</ul>
+				<!-- /.dropdown-user -->
+			</li>
+			<!-- /.dropdown -->
+		</ul>
+		<!-- /.navbar-top-links -->
 
-{% block script_files %}
-{% endblock %}
+		<div class="navbar-default sidebar" role="navigation">
+			<div class="sidebar-nav navbar-collapse">
+				<ul class="nav" id="side-menu">
+					<div class="panel-heading">
+						<h4 class="text-center">
+							<strong> {{ request.user.get_full_name }}</strong></h4>
+					</div>
+					<li>
+						<a href="{% url 'core:dashboard' %}"><i
+							class="fa fa-dashboard fa-fw"></i>
+							Dashboard</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Cadastro<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="#">Aluno</a></li>
+							<li><a href="#">Doador</a></li>
+							<li><a href="#">Funcionário</a></li>
+							<li><a href="#">Usuário</a></li>
+							<li>
+								<a href="#">Outros<span class="fa arrow"></span></a>
+								<ul class="nav nav-third-level">
+									<li><a href="#">Cursos</a></li>
+									<li><a href="#">Matrículas</a></li>
+									<li><a href="#">Mensalidades</a></li>
+									<li><a href="#">Turmas</a></li>
+								</ul>
+								<!-- /.nav-third-level -->
+							</li>
+						</ul>
+						<!-- /.nav-second-level -->
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-users fa-fw"></i> Pessoas<span
+							class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="{% url 'people:students_list' %}">Alunos</a></li>
+							<li><a href="#">Doadores</a></li>
+							<li><a href="#">Funcionários</a></li>
+							<li><a href="#">Usuários</a></li>
+						</ul>
+						<!-- /.nav-second-level -->
+					</li>
+					<li><a href="#"><i class="fa fa-cube fa-fw"></i> Doações</a></li>
+					<li><a href="#"><i class="fa fa-hourglass-2 fa-fw"></i> Despesas</a>
+					</li>
+					<li><a href="#"><i class="fa fa-gg fa-fw"></i> Cursos</a></li>
+					<li><a href="#"><i class="fa fa-files-o fa-fw"></i> Matrículas</a>
+					</li>
+					<li><a href="#"><i class="fa fa-dollar fa-fw"></i> Mensalidades</a>
+					</li>
+					<li><a href="#"><i class="fa fa-code-fork fa-fw"></i> Turmas</a></li>
+				</ul>
+			</div>
+			<!-- /.sidebar-collapse -->
+		</div>
+		<!-- /.navbar-static-side -->
+	</nav>
+	<div id="page-wrapper">
+		{% block content %}{% endblock %}
+	</div>
+	<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="{% static 'metisMenu/metisMenu.min.js' %}"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="{% static 'dist/js/sb-admin-2.js' %}"></script>
+
+
+<!-- DataTables JavaScript -->
+<script src="{% static 'datatables/js/jquery.dataTables.min.js' %}"></script>
+<script
+	src="{% static 'datatables-plugins/dataTables.bootstrap.min.js' %}"></script>
+<script
+	src="{% static 'datatables-responsive/dataTables.responsive.js' %}"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+    $(document).ready(function () {
+        $('#dataTables-example').DataTable({
+            responsive: true,
+            language: {
+                "sEmptyTable": "Nenhum registro encontrado",
+                "sProcessing": "A processar...",
+                "sLengthMenu": "Mostrar _MENU_ registos",
+                "sZeroRecords": "Não foram encontrados resultados",
+                "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registos",
+                "sInfoEmpty": "Mostrando de 0 até 0 de 0 registos",
+                "sInfoFiltered": "(filtrado de _MAX_ registos no total)",
+                "sInfoPostFix": "",
+                "sSearch": "Procurar:",
+                "sUrl": "",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Seguinte",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 
