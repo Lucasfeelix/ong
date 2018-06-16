@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'core',
-    'people',
+    'apps.accounts',
+    'apps.adm',
+    'apps.core',
+    'apps.people',
     'widget_tweaks'
 ]
 
@@ -131,5 +132,5 @@ LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = {
     'django.contrib.auth.backends.ModelBackend',
-    'accounts.backends.ModelBackend',
+    'apps.accounts.backends.ModelBackend',
 }

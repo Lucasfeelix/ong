@@ -1,0 +1,27 @@
+<div class="table-responsive">
+	<table
+		class="table table-bordered table-striped table-hover js-basic-example dataTable">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Gênero</th>
+			<th>Tipo de serviço</th>
+			<th>Bolsa Auxílio</th>
+			<th>valor</th>
+			<th>E-mail</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for employee in employees %}
+			<tr class="clickable-row" data-href="{% url 'people:employees_update' employee.ref_person employee.slug%}">
+				<td>{{ employee.name }} {{ employee.last_name }}</td>
+				<td>{{ employee.get_gender_display }}</td>
+				<td>{{ employee.get_employeestype_display }}</td>
+				<td>{{ employee.get_baghelped_display }}</td>
+				<td>{{ employee.salary }}</td>
+				<td>{{ employee.email }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>

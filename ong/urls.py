@@ -19,8 +19,10 @@ from django.contrib.auth.views import login, logout
 
 
 urlpatterns = [
-    path('', include('core.urls', namespace='dashboard')),
-    path('', include('people.urls', namespace='people')),
+    path('', include('apps.accounts.urls', namespace='accounts')),
+    path('', include('apps.adm.urls', namespace='adm')),
+    path('', include('apps.core.urls', namespace='dashboard')),
+    path('', include('apps.people.urls', namespace='people')),
     path('admin/', admin.site.urls),
     path('login/', login, {'template_name': 'login.html'}, name='login'),
     path('logout/', logout, {'next_page': 'core:dashboard'}, name='logout'),

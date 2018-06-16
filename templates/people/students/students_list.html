@@ -1,3 +1,27 @@
-{% block content %}
-  <h1> Funfou !</h1>
-{% endblock %}
+<div class="table-responsive">
+	<table
+		class="table table-bordered table-striped table-hover js-basic-example dataTable">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Gênero</th>
+			<th>Mãe</th>
+			<th>Data de nascimento</th>
+			<th>E-mail</th>
+			<th>Celular</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for student in students %}
+			<tr class="clickable-row" data-href="{% url 'people:students_update' student.ref_person student.slug %}">
+				<td>{{ student.name }} {{ student.last_name }}</td>
+				<td>{{ student.get_gender_display }}</td>
+				<td>{{ student.mothers_name }}</td>
+				<td>{{ student.date_of_birth }}</td>
+				<td>{{ student.email }}</td>
+				<td>{{ student.cellphone }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>

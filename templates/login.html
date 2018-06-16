@@ -1,88 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 {% load static %}
 {% load widget_tweaks %}
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+	<meta charset="UTF-8">
+	<meta
+		content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+		name="viewport">
+	<title>Sign In | Bootstrap Based Admin Template - Material Design</title>
+	<!-- Favicon-->
+	<link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
 
-	<title>SB Admin 2 - Bootstrap Admin Theme</title>
-
-	<!-- Bootstrap Core CSS -->
-	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-	<!-- MetisMenu CSS -->
-	<link href="{% static 'metisMenu/metisMenu.min.css' %}" rel="stylesheet">
-	<!-- Custom CSS -->
-	<link href="{% static 'dist/css/sb-admin-2.css' %}" rel="stylesheet">
-	<!-- Custom Fonts -->
-	<link href="{% static 'font-awesome/css/font-awesome.min.css' %}"
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext"
+		rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 				rel="stylesheet" type="text/css">
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+	<!-- Bootstrap Core Css -->
+	<link href="{% static 'plugins/bootstrap/css/bootstrap.css' %}"
+				rel="stylesheet">
+
+	<!-- Waves Effect Css -->
+	<link href="{% static 'plugins/node-waves/waves.css' %}" rel="stylesheet"/>
+
+	<!-- Animation Css -->
+	<link href="{% static 'plugins/animate-css/animate.css' %}" rel="stylesheet"/>
+
+	<!-- Custom Css -->
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+	{% include 'auxiliar/people/cadastro_css.html' %}
+
 </head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
-				<div class="login-panel panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title text-center">Login</h3>
+
+<body class="login-page">
+<div class="login-box">
+	<div class="logo">
+		<a href="javascript:void(0);">ONG<b> João de Barro</b></a>
+		<small>Desenvolvido por Lucas Felix</small>
+	</div>
+	<div class="card">
+		<div class="body">
+			<form id="sign_in" method="POST">{% csrf_token %}
+				<div class="msg">Logue para iniciar uma nova sessão</div>
+				{% for error in form.non_field_errors %}
+					<div class="alert bg-red">
+						{{ error }}
 					</div>
-					<div class="panel-body">
-						<form role="form" method="post">{% csrf_token %}
-							{% for error in form.non_field_errors %}
-								<div class="alert alert-danger">
-									{{ error }}
-								</div>
-							{% endfor %}
-							<fieldset>
-								<div
-									class="form-group {% if form.username.errors %} has-error{% endif %}">
-									<label for="{{ form.username.auto_id }}"
-												 class="col-md-3 control-label">{{ form.username.label }}</label>
-									{% render_field form.username class="form-control" %}
-									{% for error in form.username.errors %}
-										<span class="help-block">{{ error }}</span>
-									{% endfor %}
-								</div>
-								<div
-									class="form-group{% if form.password.errors %} has-error{% endif %}">
-									<label for="{{ form.password.auto_id }}"
-												 class="col-md-3 control-label">{{ form.password.label }}</label>
-									{% render_field form.password class="form-control" %}
-									{% for error in form.password.errors %}
-										<span class="help-block">{{ error }}</span>
-									{% endfor %}
-								</div>
-								<!-- Change this to a button or input when using this as a form -->
-								<button type="submit"
-												class="btn btn-lg btn-success btn-block float-sm-right float-md-right float-lg-right">
-									Entrar
-								</button>
-							</fieldset>
-						</form>
+				{% endfor %}
+				<div class="input-group">
+					<span class="input-group-addon"> <i class="material-icons">person</i> </span>
+					<div class="form-line">
+						<label for="{{ form.username.auto_id }}" class="form-label">{{ form.username.label }}</label>
+						{% render_field form.username class="form-control" %}
+					</div>
+					{% if form.username.errors %}<label class="error"> {% for error in form.username.errors %} {{ error }}{% endfor %}</label>{% endif %}
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"> <i
+						class="material-icons">lock</i> </span>
+					<div class="form-line">
+						<label for="{{ form.password.auto_id }}"
+									 class="form-label">{{ form.password.label }}</label>
+						{% render_field form.password class="form-control" %}
+					</div>
+					{% if form.password.errors %}<label class="error"> {% for error in form.password.errors %} {{ error }}{% endfor %}</label>{% endif %}
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<button class="btn btn-block bg-brown waves-effect" type="submit">
+							Entrar
+						</button>
 					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
+</div>
 
-	<!-- jQuery -->
-	<script src="{% static 'jquery/jquery.min.js' %}"></script>
-	<!-- Bootstrap Core JavaScript -->
-	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-	<!-- Metis Menu Plugin JavaScript -->
-	<script src="{% static 'metisMenu/metisMenu.min.js' %}"></script>
-	<!-- Custom Theme JavaScript -->
-	<script src="{% static 'dist/js/sb-admin-2.js' %}"></script>
+<!-- Jquery Core Js -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+
+<!-- Bootstrap Core Js -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.js' %}"></script>
+
+<!-- Waves Effect Plugin Js -->
+<script src="{% static 'plugins/node-waves/waves.js' %}"></script>
+
+<!-- Validation Plugin Js -->
+<script
+	src="{% static 'plugins/jquery-validation/jquery.validate.js' %}"></script>
+
+<!-- Custom Js -->
+<script src="{% static 'js/admin.js' %}"></script>
+<script src="{% static 'js/pages/examples/sign-in.js' %}"></script>
+
+{% include 'auxiliar/people/cadastro_scripts.html' %}
 
 </body>
 
 </html>
+
+{#<div class="input-group {% if form.password.errors %} has-error{% endif %}">#}
+{#	<span class="input-group-addon"> <i class="material-icons">lock</i> </span>#}
+{#	<div class="form-line">#}
+{#		<label for="{{ form.password.auto_id }}" class="col-md-3 form-label">{{ form.password.label }}</label>#}
+{#		{% render_field form.password class="form-control" %}#}
+{#		{% for error in form.password.errors %}#}
+{#			<span class="help-block">{{ error }}</span>#}
+{#		{% endfor %}#}
+{#	</div>#}
+{#</div>#}

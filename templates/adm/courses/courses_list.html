@@ -1,0 +1,23 @@
+<div class="table-responsive">
+	<table
+		class="table table-bordered table-striped table-hover js-basic-example dataTable">
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Valor</th>
+			<th>Qtd. Alunos</th>
+			<th>Duração</th>
+		</tr>
+		</thead>
+		<tbody>
+		{% for course in courses %}
+			<tr class="clickable-row" data-href="{% url 'adm:courses_update' course.ref_adm course.slug%}">
+				<td>{{ course.name }} {{ course.last_name }}</td>
+				<td>{{ course.price }}</td>
+				<td>{{ course.students_number }}</td>
+				<td>{{ course.duration }}</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+</div>

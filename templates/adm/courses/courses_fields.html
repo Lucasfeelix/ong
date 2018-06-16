@@ -1,0 +1,37 @@
+<div class="col-sm-4">
+	<div class="form-group form-float">
+		<div class="form-line">
+			<label class="form-label">{{ form.name.label }}</label>
+			{{ form.name }}
+		</div>
+		{% if form.name.errors %}<label class="error">{% for error in form.name.errors %}{{error}}{% endfor %}</label>{% endif %}
+	</div>
+</div>
+
+<div class="col-sm-1">
+	<div class="form-group form-float">
+		<div class="form-line">
+			<label class="form-label">{{ form.price.label }}</label>
+			{{ form.price }}
+		</div>
+		{% if form.price.errors %}<label class="error">{% for error in form.price.errors %}{{error}}{% endfor %}</label>{% endif %}
+	</div>
+</div>
+<div class="col-sm-1">
+	<div class="form-group form-float">
+		<div class="form-line">
+			<label class="form-label">{{ form.students_number.label }}</label>
+			{{ form.students_number }}
+		</div>
+		{% if form.students_number.errors %}<label class="error">{% for error in form.students_number.errors %}{{error}}{% endfor %}</label>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group form-float">
+		<div class="form-line">
+			<label class="form-label">{{ form.duration.label }}</label>
+			{{ form.duration }}
+		</div>
+		{% if form.duration.errors %}<label class="error">{% for error in form.duration.errors %}{{error}}{% endfor %}</label>{% endif %}
+	</div>
+</div>
