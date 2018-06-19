@@ -19,7 +19,6 @@ UNIT_TYPE = (
 )
 
 UF = (
-    ('UF', 'Estado'),
     ('AC', 'Acre'),
     ('AL', 'Alagoas'),
     ('AP', u'Amapá'),
@@ -50,7 +49,6 @@ UF = (
 )
 
 CIVIL_STATUS = (
-    (0, u'Estado civil'),
     (1, u'Casado(a)'),
     (2, u'Divorciado(a)'),
     (3, u'Separado(a)'),
@@ -60,14 +58,12 @@ CIVIL_STATUS = (
 )
 
 GENDER = (
-    (0, u'Gênero'),
     (1, u'Feminino'),
     (2, u'Masculino')
 )
 
 
 SCHOLARITY = (
-    (0, u'Escolaridade'),
     (1, u'Fundamental - Incompleto'),
     (2, u'Fundamental - Completo'),
     (3, u'Médio - Incompleto'),
@@ -83,7 +79,6 @@ SCHOLARITY = (
 )
 
 TIME = (
-    (0, u'Período'),
     (1, u'Matutino'),
     (2, u'Diurno'),
     (3, u'Vespertino'),
@@ -96,9 +91,8 @@ EMPLOYEES_TYPE = (
 )
 
 BOOLEAN_TYPE = (
-    (0, u'Bolsa Auxílio'),
-    (1, u'Não'),
-    (2, u'Sim'),
+    (0, u'Não'),
+    (1, u'Sim'),
 )
 
 PHONE_TYPE = [

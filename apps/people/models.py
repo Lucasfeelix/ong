@@ -58,6 +58,10 @@ class Person(Information):
     def complete_address(self):
         return f'{self.address}, {self.number} - {self.neighborhood} {self.city}/{self.uf}'
 
+    class Meta:
+        verbose_name = 'Pessoa'
+        verbose_name_plural = 'Pessoas'
+
 
 class Students(Person):
     scholarity = models.IntegerField(choices=SCHOLARITY, default=0)

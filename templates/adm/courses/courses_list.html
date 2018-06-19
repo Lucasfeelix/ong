@@ -11,7 +11,7 @@
 		</thead>
 		<tbody>
 		{% for course in courses %}
-			<tr class="clickable-row" data-href="{% url 'adm:courses_update' course.ref_adm course.slug%}">
+			<tr class="" href="{% url 'adm:courses_update' course.ref_adm course.slug %}">
 				<td>{{ course.name }} {{ course.last_name }}</td>
 				<td>{{ course.price }}</td>
 				<td>{{ course.students_number }}</td>
