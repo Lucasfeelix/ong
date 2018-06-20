@@ -1,0 +1,168 @@
+<div class="col-sm-4">
+	<div class="form-group">
+		<label>{{ form.name.label }}</label>
+		{{ form.name }}
+		{% if form.name.errors %}<p class="text-danger">{% for error in form.name.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="form-group">
+		<label>{{ form.last_name.label }}</label>
+		{{ form.last_name }}
+		{% if form.last_name.errors %}<p class="text-danger">{% for error in form.last_name.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.date_of_birth.label }}</label>
+		{{ form.date_of_birth }}
+		{% if form.date_of_birth.errors %}<p class="text-danger">{% for error in form.date_of_birth.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.gender.label }}</label>
+		{{ form.gender }}
+		{% if form.gender.errors %}<p class="text-danger">{% for error in form.gender.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="form-group">
+		<label>{{ form.mothers_name.label }}</label>
+		{{ form.mothers_name }}
+		{% if form.mothers_name.errors %}<p class="text-danger">{% for error in form.mothers_name.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="form-group">
+		<label>{{ form.fathers_name.label }}</label>
+		{{ form.fathers_name }}
+		{% if form.fathers_name.errors %}<p class="text-danger">{% for error in form.fathers_name.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-4">
+	<div class="form-group">
+		<label>{{ form.email.label }}</label>
+		{{ form.email }}
+		{% if form.email.errors %}<p class="text-danger">{% for error in form.email.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.cellphone.label }}</label>
+		{{ form.cellphone }}
+		{% if form.cellphone.errors %}<p class="text-danger">{% for error in form.cellphone.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.home_phone.label }}</label>
+		{{ form.home_phone }}
+		{% if form.home_phone.errors %}<p class="text-danger">{% for error in form.home_phone.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.civil_status.label }}</label>
+		{{ form.civil_status }}
+		{% if form.civil_status.errors %}<p class="text-danger">{% for error in form.civil_status.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.cpf.label }}</label>
+		{{ form.cpf }}
+		{% if form.cpf.errors %}<p class="text-danger">{% for error in form.cpf.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.rg.label }}</label>
+		{{ form.rg }}
+		{% if form.rg.errors %}<p class="text-danger">{% for error in form.rg.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.address.label }}</label>
+		{{ form.address }}
+		{% if form.address.errors %}<p class="text-danger">{% for error in form.address.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-1">
+	<div class="form-group">
+		<label>{{ form.number.label }}</label>
+		{{ form.number }}
+		{% if form.number.errors %}<p class="text-danger">{% for error in form.number.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.neighborhood.label }}</label>
+		{{ form.neighborhood }}
+		{% if form.neighborhood.errors %}<p class="text-danger">{% for error in form.neighborhood.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.city.label }}</label>
+		{{ form.city }}
+		{% if form.city.errors %}<p class="text-danger">{% for error in form.city.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.uf.label }}</label>
+		{{ form.uf }}
+		{% if form.uf.errors %}<p class="text-danger">{% for error in form.uf.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.cep.label }}</label>
+		{{ form.cep }}
+		{% if form.cep.errors %}<p class="text-danger">{% for error in form.cep.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.country.label }}</label>
+		{{ form.country }}
+		{% if form.country.errors %}<p class="text-danger">{% for error in form.country.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.occupation.label }}</label>
+		{{ form.occupation }}
+		{% if form.occupation.errors %}<p class="text-danger">{% for error in form.occupation.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.scholarity.label }}</label>
+		{{ form.scholarity }}
+		{% if form.scholarity.errors %}<p class="text-danger">{% for error in form.scholarity.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.school.label }}</label>
+		{{ form.school }}
+		{% if form.school.errors %}<p class="text-danger">{% for error in form.school.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.time.label }}</label>
+		{{ form.time }}
+		{% if form.time.errors %}<p class="text-danger">{% for error in form.time.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-6">
+	<div class="form-group">
+		<label>{{ form.comments.label }}</label>
+		{{ form.comments }}
+		{% if form.comments.errors %}<p class="text-danger">{% for error in form.comments.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
