@@ -160,6 +160,9 @@
 <script
 	src="{% static 'datatables-responsive/dataTables.responsive.js' %}"></script>
 
+<!-- jQuery Mask Plugin -->
+<script src="{% static 'jquery-mask/jquery.mask.min.js' %}"></script>
+
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 <script>
     $(document).ready(function () {
@@ -189,6 +192,17 @@
             }
         });
     });
+
+    $(document).ready(function () {
+        $('.date').mask('00/00/0000');
+        $('.cep').mask('00.000-000');
+        $('.phone-number').mask('(00) 0000-0000');
+        $('.mobile-phone-number').mask('(00) 0 0000-0000');
+        $('.cpf').mask('000.000.000-00', {reverse: true});
+        $('.rg').mask('00.000.000-0', {reverse: true});
+        $('.money').mask('000.000.000.000.000,00', {reverse: true});
+    });
+
 </script>
 
 </body>
