@@ -16,6 +16,8 @@
         {% include 'people/students/students_list.html' %}
 			{% elif type == 'donors'%}
         {% include 'people/donors/donors_list.html' %}
+			{% elif type == 'employees'%}
+        {% include 'people/employees/employees_list.html' %}
       {% else %}
         <h1> Error !</h1>
       {% endif %}

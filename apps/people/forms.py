@@ -192,6 +192,6 @@ class EmployeesForm(forms.ModelForm):
             'uf': forms.Select(attrs={'class': 'form-control'}),
             'employeestype': forms.Select(attrs={'class': 'form-control'}),
             'salary': forms.TextInput(
-                attrs={'class': 'form-control money-real'}),
+                attrs={'class': 'form-control money'}),
             'baghelped': forms.Select(attrs={'class': 'form-control'}),
         }
