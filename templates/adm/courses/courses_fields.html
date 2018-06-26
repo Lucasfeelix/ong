@@ -1,37 +1,28 @@
-<div class="col-sm-4">
-	<div class="form-group form-float">
-		<div class="form-line">
-			<label class="form-label">{{ form.name.label }}</label>
-			{{ form.name }}
-		</div>
-		{% if form.name.errors %}<label class="error">{% for error in form.name.errors %}{{error}}{% endfor %}</label>{% endif %}
-	</div>
-</div>
-
-<div class="col-sm-1">
-	<div class="form-group form-float">
-		<div class="form-line">
-			<label class="form-label">{{ form.price.label }}</label>
-			{{ form.price }}
-		</div>
-		{% if form.price.errors %}<label class="error">{% for error in form.price.errors %}{{error}}{% endfor %}</label>{% endif %}
+<div class="col-sm-3">
+	<div class="form-group">
+		<label>{{ form.name.label }}</label>
+		{{ form.name }}
+		{% if form.name.errors %}<p class="text-danger">{% for error in form.name.errors %}{{error}}{% endfor %}</p>{% endif %}
 	</div>
 </div>
 <div class="col-sm-1">
-	<div class="form-group form-float">
-		<div class="form-line">
-			<label class="form-label">{{ form.students_number.label }}</label>
-			{{ form.students_number }}
-		</div>
-		{% if form.students_number.errors %}<label class="error">{% for error in form.students_number.errors %}{{error}}{% endfor %}</label>{% endif %}
+	<div class="form-group">
+		<label>{{ form.price.label }}</label>
+		{{ form.price }}
+		{% if form.price.errors %}<p class="text-danger">{% for error in form.price.errors %}{{error}}{% endfor %}</p>{% endif %}
 	</div>
 </div>
 <div class="col-sm-2">
-	<div class="form-group form-float">
-		<div class="form-line">
-			<label class="form-label">{{ form.duration.label }}</label>
-			{{ form.duration }}
-		</div>
-		{% if form.duration.errors %}<label class="error">{% for error in form.duration.errors %}{{error}}{% endfor %}</label>{% endif %}
+	<div class="form-group">
+		<label>{{ form.students_number.label }}</label>
+		{{ form.students_number }}
+		{% if form.students_number.errors %}<p class="text-danger">{% for error in form.students_number.errors %}{{error}}{% endfor %}</p>{% endif %}
+	</div>
+</div>
+<div class="col-sm-2">
+	<div class="form-group">
+		<label>{{ form.duration.label }}</label>
+		{{ form.duration }}
+		{% if form.duration.errors %}<p class="text-danger">{% for error in form.duration.errors %}{{error}}{% endfor %}</p>{% endif %}
 	</div>
 </div>

@@ -26,7 +26,7 @@ class CoursesCreateView(LoginRequiredMixin, CreateView):
 class CoursesListView(LoginRequiredMixin, ListView):
     context_object_name = 'courses'
     model = Courses
-    template_name = 'adm/listagem.html'
+    template_name = 'listagem.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
