@@ -8,7 +8,7 @@ from .forms import CoursesForm
 class CoursesCreateView(LoginRequiredMixin, CreateView):
     form_class = CoursesForm
     model = Courses
-    template_name = 'adm/cadastrar.html'
+    template_name = 'cadastrar.html'
     success_url = reverse_lazy('adm:courses_list')
 
     def get_context_data(self, **kwargs):
@@ -40,7 +40,7 @@ class CoursesUpdateView(LoginRequiredMixin, UpdateView):
     model = Courses
     form_class = CoursesForm
     success_url = reverse_lazy('adm:courses_list')
-    template_name = 'adm/cadastrar.html'
+    template_name = 'cadastrar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

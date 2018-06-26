@@ -9,7 +9,7 @@ from .forms import DonorsForm, EmployeesForm, StudentsForm
 class StudentsCreateView(LoginRequiredMixin, CreateView):
     form_class = StudentsForm
     model = Students
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
     success_url = reverse_lazy('people:students_list')
 
     def get_context_data(self, **kwargs):
@@ -27,7 +27,7 @@ class StudentsCreateView(LoginRequiredMixin, CreateView):
 class StudentsListView(LoginRequiredMixin, ListView):
     context_object_name = 'students'
     model = Students
-    template_name = 'people/listagem.html'
+    template_name = 'listagem.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -41,7 +41,7 @@ class StudentsUpdateView(LoginRequiredMixin, UpdateView):
     model = Students
     form_class = StudentsForm
     success_url = reverse_lazy('people:students_list')
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -54,7 +54,7 @@ class StudentsUpdateView(LoginRequiredMixin, UpdateView):
 class DonorsCreateView(LoginRequiredMixin, CreateView):
     model = Donors
     form_class = DonorsForm
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
     success_url = reverse_lazy('people:donors_list')
 
     def get_context_data(self, **kwargs):
@@ -72,7 +72,7 @@ class DonorsCreateView(LoginRequiredMixin, CreateView):
 class DonorsListView(LoginRequiredMixin, ListView):
     context_object_name = 'donors'
     model = Donors
-    template_name = 'people/listagem.html'
+    template_name = 'listagem.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -86,7 +86,7 @@ class DonorsUpdate(LoginRequiredMixin, UpdateView):
     model = Donors
     form_class = DonorsForm
     success_url = reverse_lazy('people:donors_list')
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -99,7 +99,7 @@ class DonorsUpdate(LoginRequiredMixin, UpdateView):
 class EmployeesCreateView(LoginRequiredMixin, CreateView):
     model = Employees
     form_class = EmployeesForm
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
     success_url = reverse_lazy('people:employees_list')
 
     def get_context_data(self, **kwargs):
@@ -117,7 +117,7 @@ class EmployeesCreateView(LoginRequiredMixin, CreateView):
 class EmployeesListView(LoginRequiredMixin, ListView):
     context_object_name = 'employees'
     model = Employees
-    template_name = 'people/listagem.html'
+    template_name = 'listagem.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -131,7 +131,7 @@ class EmployeesUpdate(LoginRequiredMixin, UpdateView):
     model = Employees
     form_class = EmployeesForm
     success_url = reverse_lazy('people:employees_list')
-    template_name = 'people/cadastrar.html'
+    template_name = 'cadastrar.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
